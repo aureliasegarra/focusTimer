@@ -27,9 +27,13 @@ const countDown = () => {
 }
 
 useEffect(() => {
+  if(isPaused){
+    return;
+  }
+
   interval.current = setInterval(countDown, 1000);
   return () => clearInterval(interval.current);
-}, [])
+}, [isPaused]) 
 
     // I need milliseconde because I will use an interval
     const [millis, setMillis] = useState(minutesToMillis(minutes));
