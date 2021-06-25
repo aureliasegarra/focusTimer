@@ -8,8 +8,9 @@ const formatTime = (time) => time < 10 ? `0${time}`:time;
 
 
 export const CountDown = ({
-    minutes = 20,
+    minutes = 0.1,
     isPaused,
+    onProgress
 }) => {
 
 const interval = React.useRef(null);
@@ -21,7 +22,7 @@ const countDown = () => {
       return time;
     }
     const timeleft = time - 1000;
-    // report the progress here
+    onProgress(timeleft / minutesToMillis(minutes))
     return timeleft;
   })
 }
