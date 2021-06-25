@@ -53,9 +53,16 @@ const styles = StyleSheet.create({
     fontSize: fontSizes.xxxl,
     color: colors.white,
     padding: spacing.lg,
-    backgroundColor: 'rgba(94, 132, 226, 0.3)',
-
-   
+    backgroundColor: colors.dark,
+    borderRadius: 20,
+    shadowColor: "#000",
+    shadowOffset: {
+	    width: 0,
+	    height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   
 })
