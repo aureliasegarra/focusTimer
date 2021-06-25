@@ -18,16 +18,13 @@ export const Timer = ({ focusSubject }) => {
             <Text style={styles.title}>Focusing on :</Text>
             <Text style={styles.task}>Timer goes here : {focusSubject}</Text>
         </View>
-        <RoundedButton 
-            title="start" 
-            size={50} 
-            onPress={() => setIsStarted(true)} 
-        />
-         <RoundedButton 
-            title="stop" 
-            size={50} 
-            onPress={() => setIsStarted(false)}
-        />
+        {isStarted ? (
+            <RoundedButton title="Pause" onPress={() => setIsStarted(false)} />
+        ) : (
+            <RoundedButton title="Start" onPress={() => setIsStarted(true)} />
+        )
+        }
+        
     </View>
   );
 };
