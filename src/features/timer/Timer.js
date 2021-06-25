@@ -21,7 +21,13 @@ export const Timer = ({ focusSubject }) => {
         <RoundedButton 
             title="start" 
             size={50} 
-            onPress={() => setIsStarted(true)} />
+            onPress={() => setIsStarted(true)} 
+        />
+         <RoundedButton 
+            title="stop" 
+            size={50} 
+            onPress={() => setIsStarted(false)}
+        />
     </View>
   );
 };
