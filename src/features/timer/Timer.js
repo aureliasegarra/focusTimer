@@ -7,7 +7,10 @@ import { ProgressBar } from 'react-native-paper';
 import { CountDown } from '../../components/CountDown';
 import { RoundedButton } from '../../components/RoundedButton';
 
+import { Timing } from './Timing';
+
 export const Timer = ({ focusSubject }) => {
+    const [minutes, setMinutes] = useState(0.1);
     const [isStarted, setIsStarted] = useState(false);
     const [progress, setProgress] = useState(1);
 
@@ -15,10 +18,18 @@ export const Timer = ({ focusSubject }) => {
         setProgress(progress);
     }
 
+    const changeTime = (min) => {
+        setMinutes(min);
+        setProgress(1);
+        setIsStarted(false);
+    }
+    
+
   return (
     <View style={styles.container}>
         <View style={styles.countdown}>
             <CountDown 
+                minutes={minutes}
                 isPaused={!isStarted}
                 onProgress={onProgress}
             />
@@ -33,6 +44,9 @@ export const Timer = ({ focusSubject }) => {
                 style={{height: 10}}
                 progress={progress}
             />
+        </View>
+        <View style={styles.buttonWrapper}>
+            <Timing onChangeTime={changeTime} />
         </View>
         <View style={styles.buttonWrapper}>
             {isStarted ? (
@@ -67,10 +81,11 @@ const styles =StyleSheet.create({
     }, 
     buttonWrapper: {
         flex: 0.3,
+        flexDirection: 'row',
         padding: 15,
         justifyContent: 'center',
         alignItems:'center',
     }
 })
 
-export default Timer;
+

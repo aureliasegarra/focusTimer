@@ -15,6 +15,9 @@ export const CountDown = ({
 
 const interval = React.useRef(null);
 
+ // I need milliseconde because I will use an interval
+ const [millis, setMillis] = useState(null);
+
 const countDown = () => {
   setMillis((time) => { //time is currentTime
     if(time === 0){
@@ -27,20 +30,31 @@ const countDown = () => {
   })
 }
 
+// any time a minute comes in => set the millis
+useEffect(() => {
+  setMillis(minutesToMillis(minutes))
+}, [minutes])
+
+
+// any time a millis comes => log it
+useEffect(() => {
+  console.log(millis);
+}, [millis])
+
 useEffect(() => {
   if(isPaused){
+    if(interval.current) clearInterval(interval.current);
     return;
   }
-
   interval.current = setInterval(countDown, 1000);
+  
   return () => clearInterval(interval.current);
 }, [isPaused]) 
 
-    // I need milliseconde because I will use an interval
-    const [millis, setMillis] = useState(minutesToMillis(minutes));
 
     const minute = Math.floor(millis / 1000 / 60) % 60;
-    const seconds = Math.floor(millis / 1000) % 60;;
+    const seconds = Math.floor(millis / 1000) % 60;
+
  return (
    
     <Text style={styles.text}>{formatTime(minute)}:{formatTime(seconds)}</Text>
