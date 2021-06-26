@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { spacing } from '../../utils/sizes';
 import { colors } from '../../utils/colors';
 import { ProgressBar } from 'react-native-paper';
+import { useKeepAwake } from 'expo-keep-awake'; // import the Hook, prevents the screen from sleeping
 
 import { CountDown } from '../../components/CountDown';
 import { RoundedButton } from '../../components/RoundedButton';
@@ -10,6 +11,8 @@ import { RoundedButton } from '../../components/RoundedButton';
 import { Timing } from './Timing';
 
 export const Timer = ({ focusSubject }) => {
+    useKeepAwake(); // execute the Hook 
+
     const [minutes, setMinutes] = useState(0.1);
     const [isStarted, setIsStarted] = useState(false);
     const [progress, setProgress] = useState(1);
