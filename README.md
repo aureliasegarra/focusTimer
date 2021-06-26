@@ -19,20 +19,20 @@
 
 ## How to use ⚙️
 
-### 🔗 Launch the development server & meeting on http://localhost:8080/
+### ⚡️ Launch the development server & meeting on http://localhost:8080/
 ``` javascript
 npm run start
 ```
 
-### 🔗  Run for IOS
+### ⚡️ Run for IOS
 ``` javascript
 npm run ios
 ```
-### 🔗  Run for ANDROID
+### ⚡️  Run for ANDROID
 ``` javascript
 npm run android
 ```
-### 🔗  Run for WEB
+### ⚡️  Run for WEB
 ``` javascript
 npm run web
 ```
