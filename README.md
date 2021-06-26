@@ -3,7 +3,7 @@
 ## Create an application for smartphone to stay focus on a subject
 
 ## Illustration
-![Exemple](./screenshot.png =250x)![Exemple](./screenshot1.pngs =250x)
+<img src="./screenshot.png" width="200"><img src="./screenshot1.png" width="200">
 
 ## Language/tools
 - HTML5 / CSS3
