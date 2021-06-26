@@ -1,45 +1,45 @@
 #  :hourglass: Focus Timer App
 
-## Create an application for smartphone to stay focus on a subject
+## 👉 Create an application for smartphone to stay focus on a subject !
 
-## Illustration
+## Illustration 📸
 <img src="./screenshot.png" width="200">  <img src="./screenshot1.png" width="200">
 
-## Language/tools
+## Language/tools 🛠
 - HTML5 / CSS3
 - Javascript / REACT NATIVE/ Hooks
 - EXPO
   
 
-## Goals 
+## Goals 🏔
 - Discover React Native
 - Discover Expo
 - Discover Native components
 - UX / UI
 
-## How to use 
+## How to use ⚙️
 
-### Launch the development server & meeting on http://localhost:8080/
+### 🔗 Launch the development server & meeting on http://localhost:8080/
 ``` javascript
 npm run start
 ```
 
-### Run for IOS
+### 🔗  Run for IOS
 ``` javascript
 npm run ios
 ```
-### Run for ANDROID
+### 🔗  Run for ANDROID
 ``` javascript
 npm run android
 ```
-### Run for WEB
+### 🔗  Run for WEB
 ``` javascript
 npm run web
 ```
 
-## Status
+## Status 📈
 Project not completed
 
-## Context
+## Context 🎓
 Project developed as a junior web developer
 
