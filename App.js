@@ -8,17 +8,18 @@ import { spacing } from './src/utils/sizes';
 
 export default function App() {
   const [focusSubject, setFocusSubject] = useState(null);
+
   return (
     <View style={styles.container}>
      {focusSubject ? (
-      <Timer focusSubject={focusSubject} onTimerEnd={() => {
-        setFocusSubject(null);
-      }} 
+      <Timer 
+        focusSubject={focusSubject} 
+        onTimerEnd={() => setFocusSubject(null)} 
+        clearSubject={() => setFocusSubject(null)}
       />
      ) : (
        <Focus addSubject={setFocusSubject} />
      )}
-     <Text>{focusSubject}</Text>
     </View>
   );
 }
