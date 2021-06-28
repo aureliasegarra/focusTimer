@@ -12,7 +12,7 @@ import { Timing } from './Timing';
 
 const DEFAULT_TIME = 0.1;
 
-export const Timer = ({ focusSubject }) => {
+export const Timer = ({ focusSubject, onTimerEnd }) => {
     useKeepAwake(); // execute the Hook 
 
     const [minutes, setMinutes] = useState(DEFAULT_TIME);
@@ -38,6 +38,7 @@ export const Timer = ({ focusSubject }) => {
         setMinutes(DEFAULT_TIME);
         setProgress(1);
         setIsStarted(false);
+        onTimerEnd();
     }
 
     const changeTime = (min) => {
