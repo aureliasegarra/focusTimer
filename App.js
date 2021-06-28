@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Platform } from 'react-native';
 import { Focus } from './src/features/focus/Focus';
+import { FocusHistory } from './src/features/focus/FocusHistory';
 import { colors } from './src/utils/colors';
 import { Timer } from './src/features/timer/Timer';
 import { spacing } from './src/utils/sizes';
+
 
 const STATUSES = {
   COMPLETE: 1,
@@ -17,7 +19,11 @@ export default function App() {
  const addFocusHistorySubjectWithState = (focusSubject, status) => {
   setFocusHistory([...focusHistory, { suject: focusSubject, status: status }])
  }
- console.log(focusHistory);
+ 
+  const onClear = () => {
+    // Todo later
+  }
+
   return (
     <View style={styles.container}>
      {focusSubject ? (
@@ -33,7 +39,10 @@ export default function App() {
         }}
       />
      ) : (
-       <Focus addSubject={setFocusSubject} />
+       <View>
+        <Focus addSubject={setFocusSubject} />
+        <FocusHistory  focusHistory={focusHistory} onClear={onClear} />
+       </View> 
      )}
     </View>
   );
