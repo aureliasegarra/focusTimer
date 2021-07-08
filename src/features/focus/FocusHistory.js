@@ -7,7 +7,7 @@ import { RoundedButton } from '../../components/RoundedButton';
 const HistoryItem = ({ item, index }) => {
     console.log(item);
     return (
-        <Text>
+        <Text style={styles.historyItem}>
             {item.suject}
         </Text>
 
@@ -22,8 +22,8 @@ export const FocusHistory = ({ focusHistory, onClear }) => {
     return (
         <>
             <SafeAreaView style={{ flex: 0.5, alignItems: 'center' }}>
-                <Text style={{ color: 'white', fontSize: 20 }}>Thing's we've focused on</Text>
-                {!!focusHistory.length && (
+                <Text style={styles.title}>Thing's we've focused on</Text>
+                {focusHistory.length && (
                     <FlatList 
                         style={{ flex: 1 }}
                         contentContainerStyle={{ flex: 1, alignItems: 'center' }}
@@ -32,10 +32,21 @@ export const FocusHistory = ({ focusHistory, onClear }) => {
                     />
                 )}
                 {!focusHistory.length && (
-                    <Text style={{ color: "white" }}>Nothing yet</Text>
+                    <Text>Nothing yet</Text>
                 )}
             </SafeAreaView>
         </>
     )
 };
+
+const styles = StyleSheet.create({
+    historyItem: (status) => ({
+        color: status > 1 ? 'red' : 'green',
+        fontSize: fontSizes.md
+    }),
+    title: {
+        color: 'white',
+        fontSize: fontSizes.lg
+    }
+})
 
