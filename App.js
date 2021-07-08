@@ -21,7 +21,7 @@ export default function App() {
  }
  
   const onClear = () => {
-    // Todo later
+   setFocusHistory([]);
   }
 
   return (

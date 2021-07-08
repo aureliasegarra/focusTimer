@@ -24,12 +24,17 @@ export const FocusHistory = ({ focusHistory, onClear }) => {
             <SafeAreaView style={{ flex: 0.5, alignItems: 'center' }}>
                 <Text style={styles.title}>Thing's we've focused on</Text>
                 {focusHistory.length && (
-                    <FlatList 
+                   <>
+                   <FlatList 
                         style={{ flex: 1 }}
                         contentContainerStyle={{ flex: 1, alignItems: 'center' }}
                         data={focusHistory}
                         renderItem={HistoryItem}
                     />
+                    <View style={styles.clearContainer}>
+                        <RoundedButton size={75} title={"Clear"} onPress={() => onClear()} />
+                    </View>
+                    </>
                 )}
                 {!focusHistory.length && (
                     <Text>Nothing yet</Text>
@@ -47,6 +52,10 @@ const styles = StyleSheet.create({
     title: {
         color: 'white',
         fontSize: fontSizes.lg
+    }, 
+    clearContainer: {
+        alignItems: 'center',
+        padding: spacing.md
     }
 })
 
