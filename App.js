@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Platform } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import { Focus } from './src/features/focus/Focus';
 import { FocusHistory } from './src/features/focus/FocusHistory';
 import { colors } from './src/utils/colors';
@@ -65,7 +66,7 @@ export default function App() {
         }}
       />
      ) : (
-       <View>
+       <View style={{ flex: 1 }}>
         <Focus addSubject={setFocusSubject} />
         <FocusHistory  focusHistory={focusHistory} onClear={onClear} />
        </View> 
@@ -79,6 +80,14 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: Platform.OS === 'ios' ? spacing.md : spacing.lg,
     backgroundColor: colors.purple,
-    
   },
+  titleContainer: {
+    flex: 0.5,
+    padding: spacing.md,
+    justifyContent: 'center',
+  },
+  title: {
+    color: colors.white,
+    fontWeight: 'bold',
+  }
 });

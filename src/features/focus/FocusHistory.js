@@ -20,7 +20,7 @@ export const FocusHistory = ({ focusHistory, onClear }) => {
     }
 
     return (
-        <>
+        <View>
             <SafeAreaView style={{ flex: 0.5, alignItems: 'center' }}>
                 <Text style={styles.title}>Thing's we've focused on</Text>
                 {focusHistory.length && (
@@ -40,7 +40,7 @@ export const FocusHistory = ({ focusHistory, onClear }) => {
                     <Text>Nothing yet</Text>
                 )}
             </SafeAreaView>
-        </>
+        </View>
     )
 };
 

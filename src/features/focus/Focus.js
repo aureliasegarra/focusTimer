@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TextInput } from 'react-native-paper';
+
 import { RoundedButton } from '../../components/RoundedButton';
 import { fontSizes, spacing } from '../../utils/sizes';
 import { colors } from '../../utils/colors';
@@ -12,7 +13,7 @@ const [subject, setSubject] = useState(null);
     <View style={styles.container}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>What would you like to focus on ? 🤔</Text>
-        <View style={styles.inputContainer}>
+        <View style={styles.innerContainer}>
           <TextInput 
             style={{ flex: 1, marginRight: spacing.md }}
             onSubmitEditing={({ nativeEvent }) => { 
@@ -33,7 +34,7 @@ const [subject, setSubject] = useState(null);
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0.5,
     padding: spacing.xl,
   },
   titleContainer: {
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: fontSizes.lg,
   },
-  inputContainer: {
+  innerContainer: {
     paddingTop: spacing.md,
     flexDirection: 'row',
     justifyContent: 'center',
