@@ -40,10 +40,10 @@ export const FocusHistory = ({ focusHistory, onClear }) => {
 };
 
 const styles = StyleSheet.create({
-    historyItem: (status) => ({
-        color: status > 1 ? 'red' : 'green',
+    historyItem: {
+        color: 'red',
         fontSize: fontSizes.md
-    }),
+    },
     title: {
         color: 'white',
         fontSize: fontSizes.lg
